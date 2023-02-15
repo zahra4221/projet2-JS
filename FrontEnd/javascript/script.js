@@ -18,6 +18,7 @@ function generorWork(workList) {
     imageElement.crossOrigin = "anonymous";
     const titreElement = document.createElement("p");
     titreElement.innerText = gallery.title;
+    imageElement.alt = gallery.title;
     /*rattachement*/
     sectionGallery.appendChild(worksElement);
     worksElement.appendChild(imageElement);
