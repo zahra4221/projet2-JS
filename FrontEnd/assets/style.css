@@ -216,20 +216,20 @@ li:hover {
   width: 100%;
 }
 #contact,
-#login {
+#loginForm {
   width: 50%;
   margin: auto;
 }
 #contact,
-#login > * {
+#loginForm > * {
   text-align: center;
 }
 #contact,
-#login {
+#loginForm {
   margin-bottom: 20px;
 }
 #contact form,
-#login form {
+#loginForm form {
   text-align: left;
   margin-top: 30px;
   display: flex;
@@ -237,18 +237,18 @@ li:hover {
 }
 
 #contact input,
-#login input {
+#loginForm input {
   height: 50px;
   font-size: 1.2em;
   border: none;
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 #contact label,
-#login label {
+#loginForm label {
   margin: 2em 0 1em 0;
 }
 #contact textarea,
-#login textarea {
+#loginForm textarea {
   border: none;
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
@@ -313,4 +313,15 @@ a:hover :hover {
 
 .Mdpoublie {
   text-decoration: underline;
+}
+
+#connexion {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19px;
+  padding-top: 1px;
+  padding-left: 10px;
+  font-size: 1.2em;
+  text-align: center;
 }
