@@ -52,25 +52,7 @@ for (let filtresTypes of categorySet) {
   });
 }
 
-//login
-
-function login(loginForm) {
-  if (loginForm) {
-    document.getElementById("connexion").innerText = "logout";
-  } else {
-    document.getElementById("connexion").innerText = "login";
-  }
-}
-login(login);
-//effacement info
-
-function infoConnect(loginForm) {
-  if (loginForm) {
-    sessionStorage.removeItem("loginForm");
-    login(loginForm);
-  }
-}
-let logout = document.getElementById("connexion");
-logout.onclick = (loginForm) => {
-  infoConnect(loginForm);
-};
+//login-logout
+let userId = localStorage.getItem("userId")
+  ? JSON.parse(localStorage.getItem("userId"))
+  : "";

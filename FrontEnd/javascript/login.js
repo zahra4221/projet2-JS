@@ -15,11 +15,11 @@ form.addEventListener("submit", function (event) {
     },
   })
     .then((response) => response.json())
-    .then(function (resp) {
-      if (resp.token) {
-        window.localStorage.setItem("userid", JSON.stringify(resp));
+    .then(function (res) {
+      if (res.token) {
+        window.localStorage.setItem("userId", JSON.stringify(res));
         document.location.href = "./index.html";
-      } else if (resp.message) {
+      } else if (res.message) {
         alert("email incorrect");
       } else {
         alert("Mot de passe incorrect");

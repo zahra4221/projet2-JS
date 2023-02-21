@@ -15,6 +15,10 @@
     <script type="module" crossorigin src="./javascript/script.js"></script>
   </head>
   <body>
+    <div class="loginPage">
+      <span><i class="fa-regular fa-pen-to-square"></i>Mode édition</span>
+      <button id="editionButton">Publier les changements</button>
+    </div>
     <header>
       <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
       <nav>
@@ -22,6 +26,7 @@
           <a href="#portfolio"><li>projets</li></a>
           <a href="#contact"><li>contact</li></a>
           <a href="./login.html" id="connexion"><li>login</li></a>
+          <li class="loginPage" id="logout"><a href="#">Logout</a></li>
           <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
         </ul>
       </nav>
@@ -30,8 +35,16 @@
       <section id="introduction">
         <figure>
           <img src="./assets/images/sophie-bluel.png" alt="" />
+          <figcaption class="loginPage">
+            <span class="modifier"
+              ><i class="fa-regular fa-pen-to-square"></i>Modifier</span
+            >
+          </figcaption>
         </figure>
         <article>
+          <span class="loginPage modifier"
+            ><i class="fa-regular fa-pen-to-square"></i>Modifier</span
+          >
           <h2>Designer d'espace</h2>
           <p>
             Je raconte votre histoire, je valorise vos idées. Je vous accompagne
@@ -52,6 +65,8 @@
       </section>
       <section id="portfolio">
         <h2>Mes Projets</h2>
+        <span class="active loginPage modifier"><i class="fa-regular fa-pen-to-square"></i>Modifier</span
+          ></span>
         <div class="filtres"></div>
         <div class="gallery"></div>
       </section>
