@@ -10,13 +10,14 @@
       href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
       rel="stylesheet"
     />
+    <script src="https://kit.fontawesome.com/0efc3e14b5.js" crossorigin="anonymous"></script>
     <meta name="description" content="" />
     <link rel="stylesheet" href="./assets/style.css" />
     <script type="module" crossorigin src="./javascript/script.js"></script>
   </head>
   <body>
-    <div class="loginPage">
-      <span><i class="fa-regular fa-pen-to-square"></i>Mode édition</span>
+    <div class="loginPage" id="modeEdition">
+      <span><i class="fa-regular fa-pen-to-square icon_stylo "></i>Mode édition</span>
       <button id="editionButton">Publier les changements</button>
     </div>
     <header>
@@ -25,8 +26,8 @@
         <ul>
           <a href="#portfolio"><li>projets</li></a>
           <a href="#contact"><li>contact</li></a>
-          <a href="./login.html" id="connexion"><li>login</li></a>
-          <li class="loginPage" id="logout"><a href="#">Logout</a></li>
+          <a href="./login.html"><li id="connecter">login</li></a>
+          <a href="#"> <li class="loginPage" id="logout">Logout</li></a>
           <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
         </ul>
       </nav>
@@ -34,16 +35,13 @@
     <main>
       <section id="introduction">
         <figure>
-          <img src="./assets/images/sophie-bluel.png" alt="" />
-          <figcaption class="loginPage">
-            <span class="modifier"
-              ><i class="fa-regular fa-pen-to-square"></i>Modifier</span
+          <img src="./assets/images/sophie-bluel.png" alt=""/>
+            <span class="blockelem modifier loginPage"><i class="fa-regular fa-pen-to-square icon_stylo "></i>Modifier</span
             >
-          </figcaption>
         </figure>
         <article>
           <span class="loginPage modifier"
-            ><i class="fa-regular fa-pen-to-square"></i>Modifier</span
+            ><i class="fa-regular fa-pen-to-square icon_stylo "></i>Modifier</span
           >
           <h2>Designer d'espace</h2>
           <p>
@@ -65,7 +63,50 @@
       </section>
       <section id="portfolio">
         <h2>Mes Projets</h2>
-        <span class="active loginPage modifier"><i class="fa-regular fa-pen-to-square"></i>Modifier</span
+        <!--modale-->
+        <div id="modale">
+          <div id="fenetreModale">
+            <!--fenetre1-->
+            <div class="galleryPhoto miniPage1">
+              <span class="boutonCroix">x</span>
+              <div id="photo">
+                <h3>Galerie photo</h3>
+                <div id="editerPhoto">
+                </div>
+                <button id="ajoutPhoto">Ajouter une photo</button>
+                <span class="supGalerie">Supprimer la galerie</span>
+              </div>
+            </div>
+            <!--fenetre2-->
+            <div class="galleryPhoto miniPage2">
+              <span id="retour">
+                <i class="fa-solid fa-arrow-left"></i>"
+              </span>
+              <span class="boutonCroix">x</span>
+              <div>
+                <h3>Ajout photo</h3>
+                <form action="#" method="post" id="ajoutImage">
+                  <div id="fondImage">
+                    <input type="fichier" name="ajoutFichier" id="ajoutFichier" accept="image/png, image/jpeg"><img
+          id="preview"><i class="fa fa-image picModif"></i>
+                    <div id="boutonAjout" class="boutonAjout">
+                      <i class="fa-solid fa-plus"></i>
+                      <label class="ajouter" for="image">Ajouter photo</label>
+                    </div>
+                    <span id="typePhoto">jpg, png : 4mo max</span>
+                  </div>
+                  <label for="titre">Titre</label>
+                  <input type="text" name="titre" id="titre" required/>
+                  <label for="categorie">Catégorie</label>
+                  <input type="text" name="categorie" id="categorie" required>
+                  <div id="ligne"></div>
+                  <input type="submit" value="Valider"/>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="active loginPage modifier"><i class="fa-regular fa-pen-to-square icon_stylo "></i>Modifier</span
           ></span>
         <div class="filtres"></div>
         <div class="gallery"></div>
