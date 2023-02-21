@@ -56,3 +56,24 @@ for (let filtresTypes of categorySet) {
 let userId = localStorage.getItem("userId")
   ? JSON.parse(localStorage.getItem("userId"))
   : "";
+
+let loginPage = document.querySelectorAll(".loginPage");
+let modeEdition = document.getElementById("modeEdition");
+let connecter = document.getElementById("connecter");
+let logout = document.getElementById("logout");
+
+if (userId.token) {
+  loginPage.forEach(function (info) {
+    info.style.visibility = "visible";
+  });
+  connecter.style.display = "none";
+  modeEdition.style.display = "flex";
+} else {
+  console.log("Attention, vous n'etes pas connectés");
+}
+logout.addEventListener("click", function () {
+  if (confirm("Voulez vous vous déconnecter?")) {
+    window.localStorage.removeItem("userId");
+    location.reload();
+  }
+});
