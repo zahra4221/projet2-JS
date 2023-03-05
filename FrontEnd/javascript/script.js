@@ -160,6 +160,25 @@ let imageDisplay = (data) => {
 };
 
 //supprimer
+// Cette fonction permet de créer un bouton "éditer" et un bouton de suppression( avec l'icone trash)
+const NewImageModel = (datas) => {
+  let figure = document.createElement("figure");
+  figure.setAttribute("userId", datas.id);
+  document.querySelector(".editerPhoto").appendChild(figure);
+  let img = document.createElement("img");
+  img.src = datas.imageUrl;
+  img.crossOrigin = "anonymous";
+  figure.appendChild(img);
+  let figcaption = document.createElement("figcaption");
+  figcaption.innerText = "éditer";
+  figure.appendChild(figcaption);
+  let div = document.createElement("div");
+  div.classList.add("trash");
+  div.addEventListener("click", OnTrashClick);
+  div.innerHTML = '<i class="fa-regular fa-trash-can"></i>';
+  figure.appendChild(div);
+};
+
 // on fait appel à une fonction pour l'évenement clique sur la poubelle pour supprimer une photo
 const OnTrashClick = (event) => {
   // On récupère l'élément parent qui a un attribut "userId"
@@ -197,24 +216,6 @@ const OnTrashClick = (event) => {
     }
   });
 };
-// Cette fonction permet de créer un bouton "éditer" et un bouton de suppression( avec l'icone trash)
-const NewImageModel = (datas) => {
-  let figure = document.createElement("figure");
-  figure.setAttribute("userId", datas.id);
-  document.querySelector(".editerPhoto").appendChild(figure);
-  let img = document.createElement("img");
-  img.src = datas.imageUrl;
-  img.crossOrigin = "anonymous";
-  figure.appendChild(img);
-  let figcaption = document.createElement("figcaption");
-  figcaption.innerText = "éditer";
-  figure.appendChild(figcaption);
-  let div = document.createElement("div");
-  div.classList.add("trash");
-  div.addEventListener("click", OnTrashClick);
-  div.innerHTML = '<i class="fa-regular fa-trash-can"></i>';
-  figure.appendChild(div);
-};
 
 //ajout
 // on récupère des éléments du DOM
@@ -224,10 +225,10 @@ let arrowLeft = document.querySelector(".arrowLeft");
 
 // on crée un évenement lorsqu'on clique sur le bouton d'ajout de photo
 ajoutPhoto.addEventListener("click", () => {
-  galleryPhoto.scrollLeft += 630; // (fait défiler la galerie de 600 pixels vers la droite)
+  galleryPhoto.scrollLeft += 640; // (fait défiler la galerie de 600 pixels vers la droite)
 });
 arrowLeft.addEventListener("click", () => {
-  galleryPhoto.scrollLeft -= 630; // fait défiler la galerie de 600 pixels vers la gauche
+  galleryPhoto.scrollLeft -= 640; // fait défiler la galerie de 600 pixels vers la gauche
 });
 
 // on récupère des éléments du DOM
