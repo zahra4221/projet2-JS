@@ -266,46 +266,58 @@ input[type="submit"] {
 
 footer nav ul {
   display: flex;
-  justify-content: flex-end;
-  margin: 2em;
+  justify-content: center;
 }
+/*nouveauté*/
 
-/*ajout CSS*/
 a {
   text-decoration: none;
   color: black;
 }
+
 /*filtres*/
+
 .filtres {
   display: flex;
   justify-content: center;
-  gap: 10px;
   margin-bottom: 60px;
   align-items: center;
+  gap: 10px;
 }
-.filtres p {
-  font-weight: 700;
-  font-size: 16px;
-  color: #1d6154;
+.filter-button {
+  background-color: white;
   border: 1px solid #1d6154;
   border-radius: 60px;
-  padding-left: min(11px);
-  padding-right: min(11px);
-  min-width: 100px;
+  max-width: 200px;
   height: 37px;
-  font-family: "Syne";
-  line-height: 35px;
-  text-align: center;
-}
-.filtres p:hover {
-  background-color: #1d6154;
-  color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 16px;
+  font-family: Syne;
+  font-weight: 700;
   cursor: pointer;
+  color: #1d6154;
 }
 
-/*login*/
-.loginPage {
+.filter-button:hover {
+  background-color: #1d6154;
+  color: white;
+}
+#ProjetIcon {
+  display: flex;
+  justify-content: center;
+}
+
+/*login-logout*/
+.hidden,
+#modeEdition {
+  display: none;
   visibility: hidden;
+}
+#modeEdition {
+  display: none;
 }
 
 #modeEdition {
@@ -320,7 +332,6 @@ a {
   align-items: center;
   justify-content: center;
 }
-
 #editionButton {
   border-radius: 60px;
   background-color: white;
@@ -341,4 +352,314 @@ a {
   display: flex;
   margin-left: 56px;
   margin-top: 16px;
+}
+
+.modifier i {
+  cursor: pointer;
+}
+#logout {
+  display: flex;
+}
+
+/*modale*/
+.modale {
+  margin-top: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.fenetreModale {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.galleryPhoto {
+  display: flex;
+  width: 630px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  height: 721px;
+}
+
+.pageModale {
+  border-radius: 10px;
+  background-color: #fff;
+  min-width: 630px;
+}
+
+.pageModale .closeButton {
+  font-size: 20px;
+  float: right;
+  cursor: pointer;
+  padding-right: 30px;
+}
+
+.pageModale .closeButton {
+  font-size: 20px;
+  float: right;
+  cursor: pointer;
+  padding-top: 30px;
+  padding-right: 40px;
+}
+.titreGallery {
+  color: #000;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 30px;
+  text-align: center;
+  padding-top: 60px;
+  margin-bottom: 46px;
+}
+
+.editerPhoto {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 105px;
+  margin-right: 105px;
+  gap: 5px;
+}
+
+.editerPhoto figure {
+  position: relative;
+}
+.editerPhoto img {
+  height: 104px;
+  width: 78px;
+}
+.editerPhoto figcaption {
+  font-family: "Work Sans";
+  font-weight: 400;
+  color: #000;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.boutonGalerie {
+  margin-top: 47px;
+  padding-top: 38px;
+  border-top: 1px solid #b3b3b3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 105px;
+  margin-right: 105px;
+}
+.boutonGalerie p {
+  font-family: "Syne";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #d65353;
+  cursor: pointer;
+}
+.editerPhoto .trash,
+.arrowfleche {
+  width: 17px;
+  height: 17px;
+  border-radius: 2px;
+  background-color: #000;
+  text-align: center;
+  position: absolute;
+  cursor: pointer;
+  top: 6px;
+  right: 6px;
+}
+.editerPhoto .arrowfleche {
+  right: 26px;
+}
+.editerPhoto .trash i,
+.arrowfleche i {
+  color: #fff;
+  font-size: 10px;
+}
+
+.ajoutPhoto {
+  width: 237px;
+  height: 36px;
+  border-radius: 60px;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 23px;
+  font-family: "Syne";
+  background: #1d6154;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+.ajoutPhotogallery {
+  display: flex;
+  width: 630px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 721px;
+  border-radius: 10px;
+}
+.arrowLeft {
+  font-size: 20px;
+  float: left;
+  cursor: pointer;
+  padding-top: 30px;
+  padding-left: 30px;
+}
+
+#titreImage {
+  padding-top: 60px;
+  margin-bottom: 36px;
+  font-size: 26px;
+  font-family: "Work Sans";
+  font-weight: 400;
+  text-align: center;
+  color: #000;
+}
+#ajoutImage {
+  display: flex;
+  flex-direction: column;
+  margin-left: 105px;
+  margin-right: 105px;
+}
+#fondImage {
+  width: 100%;
+  border-radius: 3px;
+  padding-top: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 40px;
+  background: #e8f1f7;
+}
+.previewImage {
+  width: 129px;
+  height: 100%;
+  transform: translate(-50%);
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+#previewPhoto {
+  display: none;
+  width: 130px;
+  height: 100%;
+}
+.fa-regular.fa-image {
+  display: block;
+  color: #b9c5cc;
+  font-size: 60px;
+  margin-bottom: 21px;
+}
+.boutonAjout {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 173px;
+  height: 36px;
+  line-height: 35px;
+  border-radius: 50px;
+  background: #cbd6dc;
+  border: none;
+  cursor: pointer;
+  font-family: "Work Sans";
+  font-weight: 500;
+  font-size: 14px;
+  color: #306685;
+}
+.typePhoto {
+  font-family: "Work Sans";
+  font-weight: 400;
+  font-size: 10px;
+  margin-top: 18px;
+  color: #444444;
+}
+.pageModale form label {
+  display: flex;
+  flex-direction: column;
+}
+.imageTitle,
+form select {
+  height: 50px;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: none;
+}
+.pageModale form select {
+  width: 100%;
+  height: 51px;
+  background-color: #fff;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  margin-top: 10px;
+  margin-bottom: 47px;
+  border: none;
+  outline: none;
+}
+#submitBouton {
+  width: 100%;
+  text-align: center;
+  padding-top: 32px;
+  border-top: 1px solid #b3b3b3;
+}
+#submitBouton button {
+  width: 237px;
+  height: 36px;
+  background: #a7a7a7;
+  border-radius: 60px;
+  border: none;
+  cursor: pointer;
+  font-family: "Syne";
+  font-weight: 700;
+  font-size: 14px;
+  color: #ffffff;
+}
+.openModal {
+  display: none;
+}
+
+.modifsize {
+  font-family: "Work Sans";
+  font-weight: 400;
+  font-size: 14px;
+  margin-left: 15px;
+}
+
+#submitBouton button:hover {
+  background-color: #1d6154;
+}
+#portfolio .modifier {
+  margin-top: 6px;
+}
+
+.modifier {
+  display: flex;
+  cursor: pointer;
+}
+.modifier p {
+  line-height: 16px;
+}
+#modifier .edit {
+  margin-bottom: 19px;
+}
+
+#introduction figure .modifier {
+  margin-left: 10%;
+  margin-top: 15px;
+}
+
+#ProjetIcon {
+  display: flex;
+  justify-content: center;
+}
+.iconModif {
+  display: flex;
+  margin-left: 11px;
 }

@@ -13,10 +13,9 @@
     <script src="https://kit.fontawesome.com/0efc3e14b5.js" crossorigin="anonymous"></script>
     <meta name="description" content="" />
     <link rel="stylesheet" href="./assets/style.css" />
-    <script type="module" crossorigin src="./javascript/script.js"></script>
   </head>
   <body>
-    <div class="loginPage" id="modeEdition">
+    <div class="hidden" id="modeEdition">
       <span><i class="fa-regular fa-pen-to-square icon_stylo "></i>Mode édition</span>
       <button id="editionButton">Publier les changements</button>
     </div>
@@ -26,8 +25,8 @@
         <ul>
           <a href="#portfolio"><li>projets</li></a>
           <a href="#contact"><li>contact</li></a>
-          <a href="./login.html"><li id="connecter">login</li></a>
-          <a href="#"> <li class="loginPage" id="logout">Logout</li></a>
+          <a class="login" href="./login.html"><li id="connecter">login</li></a>
+          <a href="#"> <li class="hidden" id="logout">Logout</li></a>
           <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
         </ul>
       </nav>
@@ -36,12 +35,15 @@
       <section id="introduction">
         <figure>
           <img src="./assets/images/sophie-bluel.png" alt=""/>
-            <span class="blockelem modifier loginPage"><i class="fa-regular fa-pen-to-square icon_stylo "></i>Modifier</span
-            >
+            <span class="hidden modifier ">
+              <i class="fa-regular fa-pen-to-square"></i>
+              <p>Modifier</p>
+              </span>
         </figure>
         <article>
-          <span class="loginPage modifier"
-            ><i class="fa-regular fa-pen-to-square icon_stylo "></i>Modifier</span
+          <!--bouton modifier-->
+          <span class="hidden modifier"
+            ><i class="fa-regular fa-pen-to-square icon_stylo "></i><p>Modifier</p></span
           >
           <h2>Designer d'espace</h2>
           <p>
@@ -61,54 +63,66 @@
           </p>
         </article>
       </section>
-      <section id="portfolio">
-        <h2>Mes Projets</h2>
-        <!--modale-->
-        <div id="modale">
-          <div id="fenetreModale">
-            <!--fenetre1-->
-            <div class="galleryPhoto miniPage1">
-              <span class="boutonCroix">x</span>
-              <div id="photo">
-                <h3>Galerie photo</h3>
-                <div id="editerPhoto">
-                </div>
-                <button id="ajoutPhoto">Ajouter une photo</button>
-                <span class="supGalerie">Supprimer la galerie</span>
-              </div>
-            </div>
-            <!--fenetre2-->
-            <div class="galleryPhoto miniPage2">
-              <span id="retour">
-                <i class="fa-solid fa-arrow-left"></i>"
-              </span>
-              <span class="boutonCroix">x</span>
-              <div>
-                <h3>Ajout photo</h3>
-                <form action="#" method="post" id="ajoutImage">
-                  <div id="fondImage">
-                    <input type="fichier" name="ajoutFichier" id="ajoutFichier" accept="image/png, image/jpeg"><img
-          id="preview"><i class="fa fa-image picModif"></i>
-                    <div id="boutonAjout" class="boutonAjout">
-                      <i class="fa-solid fa-plus"></i>
-                      <label class="ajouter" for="image">Ajouter photo</label>
-                    </div>
-                    <span id="typePhoto">jpg, png : 4mo max</span>
-                  </div>
-                  <label for="titre">Titre</label>
-                  <input type="text" name="titre" id="titre" required/>
-                  <label for="categorie">Catégorie</label>
-                  <input type="text" name="categorie" id="categorie" required>
-                  <div id="ligne"></div>
-                  <input type="submit" value="Valider"/>
-                </form>
+      <!--modale-->
+      <section class="modale hidden">
+        <div class="fenetreModale"></div>
+          <div class="galleryPhoto">
+            <div class="pageModale">
+              <div class="galerieAjoutphoto">
+            <div class="closeButton"><i class="fa-solid fa-xmark"></i></div>
+              <h2 class="titreGallery">Galerie photo</h2>
+              <div class="editerPhoto"></div>
+              <div class="boutonGalerie">
+              <button class="ajoutPhoto">Ajouter une photo</button>
+              <p>Supprimer la galerie</p>
               </div>
             </div>
           </div>
-        </div>
-        <span class="active loginPage modifier"><i class="fa-regular fa-pen-to-square icon_stylo "></i>Modifier</span
-          ></span>
-        <div class="filtres"></div>
+          <div class="ajoutPhotogallery">
+            <div class="pageModale">
+            <div id="icone">
+              <div class="arrowLeft"><i class="fa-solid fa-arrow-left"></i></div>
+              <div class="closeButton"><i class="fa-solid fa-xmark"></i></div>
+            <div>
+              <h2 id="titreImage">Ajout photo</h2>
+              <form id="ajoutImage">
+                <div id="fondImage">
+                  <div class="previewImage">
+                    <img src="" alt="" id="previewPhoto">
+                  </div>
+                    <i class="fa-regular fa-image"></i>
+                    <input type="file" name="image" class="boutonAjout" id="boutonAjout" accept="image/png, image/jpeg" required>
+                    <label for="boutonAjout" class="boutonAjout">+ Ajouter une photo</label>
+                    <p class="typePhoto">jpg, png : 4mo max</p>
+                  </div>
+                <label>Titre
+                  <input type="text" name="title" class="imageTitle" required/></label>
+                <label for="catList">Catégorie</label>
+                <select name="category" id="catList" required>
+                  <option value="1">Objets</option>
+                  <option value="2">Appartements</option>
+                  <option value="3">Hôtel & restaurants</option>
+                </select>
+                <div id="ligne"></div>
+                <div id="submitBouton">
+                  <button type="submit">Valider</button>
+                </div>
+              </form>
+            </div>
+            </div>
+          </div>
+        </section>
+      <!--section portfolio-->
+      <section id="portfolio">
+        <div id="ProjetIcon">
+        <h2>Mes Projets</h2>
+        <span class="hidden modifier openModal ">
+          <i class="fa-solid fa-pen-to-square iconModif"><p class="modifsize">Modifier</p></i>
+        </span>
+      </div>
+        <div class="filtres"> <button class="filter-button buttonTous" data-category-id="0">
+          Tous
+        </button></div>
         <div class="gallery"></div>
       </section>
       <section id="contact">
@@ -125,7 +139,6 @@
         </form>
       </section>
     </main>
-
     <footer>
       <nav>
         <ul>
@@ -133,5 +146,6 @@
         </ul>
       </nav>
     </footer>
+    <script src="./javascript/script.js"></script>
   </body>
 </html>
