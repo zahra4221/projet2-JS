@@ -1,5 +1,5 @@
 # projet2-Portfolio
-Pendant ma formation, j'ai contribué au projet Portfolio de l'architecte d'intérieur. Mes messions principales étaient :  
+Pendant ma formation, j'ai contribué au projet Portfolio de l'architecte d'intérieur. Mes missions principales étaient :  
   
 Page de Présentation des Travaux de l'Architecte :  
     •	Développer la page de présentation des travaux en utilisant le code HTML fourni.  
